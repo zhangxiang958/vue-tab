@@ -1,0 +1,27 @@
+{
+  "name": "vue-waterfall",
+  "version": "1.0.0",
+  "description": "a component for vue",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "zhangxiang",
+  "license": "ISC",
+  "dependencies": {
+    "babel-core": "^6.18.2",
+    "babel-loader": "^6.2.8",
+    "babel-plugin-transform-runtime": "^6.15.0",
+    "babel-preset-es2015": "^6.18.0",
+    "babel-runtime": "^6.18.0",
+    "css-loader": "^0.28.4",
+    "gulp": "^3.9.1",
+    "gulp-connect": "^5.0.0",
+    "gulp-uglify": "^3.0.0",
+    "gulp-webpack": "^1.5.0",
+    "vinyl-named": "^1.1.0",
+    "vue": "^2.3.4",
+    "vue-loader": "^12.2.1",
+    "vue-template-compiler": "^2.3.4"
+  }
+}

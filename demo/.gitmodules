@@ -1,0 +1,3 @@
+[submodule "front.js"]
+	path = front.js
+	url = https://github.com/myst729/front.js.git
