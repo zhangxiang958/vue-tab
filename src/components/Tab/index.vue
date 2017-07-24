@@ -142,6 +142,7 @@
             <li v-for="(tab,index) in tabs" class="tabs-title" :style="{width: (100 / tabs.length) + '%', fontSize: tab.fontSize, height: tab.tabHeight}">
                 <a
                     :class="activeHash === tab.tabHash ? 'active' : ''"
+                    :style="{ lineHeight: tab.tabHeight }"
                     class="tabs-titleLink"
                     @click="setPage(index)">
                     {{ tab.tabHeader }}
@@ -215,6 +216,7 @@
             .tabs-titleLink {
                 display: block;
                 width: 100%;
+                height: 100%;
                 position: relative;
                 color: #999;
                 &:hover {
@@ -234,7 +236,8 @@
                     bottom: 0;
                     left: 50%;
                     transform: translateX(-50%);
-                    width: rem(128);
+                    // width: rem(128);
+                    width: 100%;
                     height: rem(8);
                     background: #fdde02;
                 }
