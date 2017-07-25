@@ -1,8 +1,6 @@
 <script>
     // import VueRouter  from 'vendor/vue-router';
-    import Banner     from './Banner/index.vue';
-    import Tabs       from './Tab/index.vue';
-    import Tab        from './Tab/tab.vue';
+    import { Tabs, Tab }  from './Tab';
 
     export default {
         created(){
@@ -17,14 +15,13 @@
             }
         },
         components: {
-          Banner, Tabs, Tab
+            Tabs, Tab
         }
     }
 </script>
 
 <template>
     <div class="app">
-        <Banner />
         <Tabs>
             <Tab name="好友榜" hash="friend" fontsize="36" tabheight="90">
                 <div class="first"></div>
@@ -40,11 +37,14 @@
 </template>
 
 <style lang="scss">
-    @import "~commonscss";
-    @import "~css/main.scss";
+    $font_size : 75;
+
+    @function rem($pixels){
+        @return $pixels / $font_size + rem;
+    }
 
     .first {
-        height: 500px;
+        height: 800px;
         background: yellow;
     }
     .second {
@@ -52,7 +52,7 @@
         background: red;
     }
     .three {
-        height: 500px;
+        height: 300px;
         background: blue;
     }
 

@@ -185,7 +185,11 @@
 </template>
 
 <style lang="scss" scoped>
-    @import "~commonscss";
+    $font_size : 75;
+
+    @function rem($pixels){
+        @return $pixels / $font_size + rem;
+    }
 
     .tabs-container {
         width: 100%;
@@ -208,7 +212,9 @@
         }
         .tabs-list {
             position: relative;
+            padding: 0;
             border-bottom: 1px solid #ccc;
+            list-style: none;
             overflow: hidden;
         }
         .tabs-title {
