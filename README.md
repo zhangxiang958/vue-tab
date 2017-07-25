@@ -60,7 +60,7 @@ Here list Props on swipe component
 
 ## Live Demo
 
-  https://zhangxiang958.github.io/Lazyload/demo/index.html
+  https://zhangxiang958.github.io/vue-tab/demo/index.html
 
 ## License
 
