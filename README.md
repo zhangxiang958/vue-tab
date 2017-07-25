@@ -8,15 +8,29 @@ vue-tab is a touch swipe tab for vue.js.
 
 ## Install
 
+```
+
+```
+
+### Import using module
+```
+import { Tabs, Tab }  from 'Tab';
+```
 
 ## Usage
 
 ```
-import { Tabs, Tab }  from './Tab/';
+import { Tabs, Tab }  from './Tab';
+
+methods: {
+    changePage(idx) {
+        console.log(idx);
+    }
+}
 
 <template>
     <div class="app">
-        <Tabs>
+        <Tabs @changePage="changeFunc">
             <Tab name="好友榜" hash="friend" fontsize="36" tabheight="90">
                 <div class="first"></div>
             </Tab>
@@ -38,11 +52,11 @@ Here list Props on swipe component
 
 | Option | Description |
 | ----- | ----- |
-| speed | Number(default: 300) speed of animation. |
-| auto | Number(default: 3000) delay of auto slide. |
-| continuous | Boolean (default:true) - creates an infinite slider without endpoints |
-| showIndicators | Boolean (default:true) - show indicators on slider bottom. |
-| prevent | Boolean (default:false) - preventDefault when touch start, useful for some lower version Android Browser(4.2 etc). |
+| name | Required, the text of tab header |
+| hash | Required, the hash of tab page |
+| fontSize | String, the fontSize of tab Header, is caculated by rem |
+| tabheight | String, the tabHeight of tabHeader, is caculated by rem |
+| changePage | Event, it will be fired after the page change, you can get the currentPage index in the callback function |
 
 ## Live Demo
 

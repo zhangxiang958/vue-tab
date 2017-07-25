@@ -16,6 +16,11 @@
             if(this.tabs.length) {
                 this.indexTab ? this.selectTab(this.indexTab) : this.selectTab(this.tabs[0].tabHash);
             }
+            this.setPage(0);
+            this.$nextTick(() => {
+
+                this.children = document.querySelectorAll('.tabs-panel-content');
+            });
         },
         watch: {
             'indexTab'() {
@@ -27,6 +32,7 @@
         data() {
             return {
                 tabs: [],
+                children: [],
                 activeHash: '',
                 touchPoint: {
                     startLeft: 0,
@@ -54,20 +60,20 @@
             next() {
                 let currentpage = this.currentPage;
                 (currentpage < this.tabs.length - 1) && currentpage++;
-                console.log('next, currentpage: ' + currentpage);
+                // console.log('next, currentpage: ' + currentpage);
                 this.setPage(currentpage);
             },
             prev() {
                 let currentpage = this.currentPage;
                 (currentpage > 0) && currentpage--;
-                console.log('prev, currentpage: ' + currentpage);
+                // console.log('prev, currentpage: ' + currentpage);
                 this.setPage(currentpage);
             },
             reset() {
                 this.setPage(this.currentPage);
             },
             setPage(page) {
-                console.log('set');
+                // console.log('set');
                 const prevPage = this.currentPage;
                 this.currentPage = page;
 
@@ -75,24 +81,36 @@
 
                     return i > page - 1 ? total : total + item.$el['clientWidth'];
                 }, 0);
+
+                // console.log(this.currentPage);
+                [].forEach.call(this.children, (el, index) => {
+
+                    if(index === this.currentPage) {
+                        el.style.height = 'auto';
+                    } else {
+                        el.style.height = '0px';
+                    }
+
+                });
                 this.selectTab(this.tabs[page].tabHash);
+                this.$emit('changePage', this.currentPage);
             },
             onTouchStart(event) {
                 const touchPoint = event.changedTouches[0] || event.touches[0];
 
                 const startLeft = touchPoint.pageX;
-                console.log('left:' + startLeft);
+                // console.log('left:' + startLeft);
                 this.touchPoint.startLeft = startLeft;
 
                 const startTop = touchPoint.pageY;
-                console.log('top:' + startTop);
+                // console.log('top:' + startTop);
                 this.touchPoint.startTop = startTop;
 
                 const startTranslateX = this.translateX;
                 this.startTranslateX = startTranslateX;
 
                 const touchTime = new Date().getTime();
-                console.log('time:' + touchTime);
+                // console.log('time:' + touchTime);
                 this.touchPoint.startTime = touchTime;
             },
             onTouchMove(event) {
@@ -122,10 +140,11 @@
                 }
             },
             onTouchEnd(event) {
-
-                if(this.distance.left < -100) {
+                var quick = new Date().getTime() - this.startTime < 1000;
+                // console.log(quick);
+                if(this.distance.left < -100 || (quick && this.distance.left < -15 && this.distance.top / this.distance.left > -6)) {
                     this.next();
-                } else if(this.distance.left > 100) {
+                } else if(this.distance.left > 100 || (quick && this.distance.left > 15 && this.distance.top / this.distance.left < 6)) {
                     this.prev();
                 } else {
                     this.reset();
@@ -166,11 +185,7 @@
 </template>
 
 <style lang="scss" scoped>
-    $font_size : 75;
-
-    @function rem($pixels){
-        @return $pixels / $font_size + rem;
-    }
+    @import "~commonscss";
 
     .tabs-container {
         width: 100%;
@@ -193,6 +208,7 @@
         }
         .tabs-list {
             position: relative;
+            border-bottom: 1px solid #ccc;
             overflow: hidden;
         }
         .tabs-title {
@@ -232,6 +248,7 @@
                 }
                 &.active {
                     color: #000;
+                    font-weight: 900;
                 }
                 &:after {
                     content: '';
