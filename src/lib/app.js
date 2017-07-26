@@ -10304,23 +10304,12 @@
 
 	'use strict';
 
-	Object.defineProperty(exports, "__esModule", {
-	    value: true
-	});
-	exports.Tab = exports.Tabs = undefined;
+	var Tabs = __webpack_require__(11);
+	var Tab = __webpack_require__(16);
 
-	var _index = __webpack_require__(11);
-
-	var _index2 = _interopRequireDefault(_index);
-
-	var _tab = __webpack_require__(16);
-
-	var _tab2 = _interopRequireDefault(_tab);
-
-	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
-	exports.Tabs = _index2.default;
-	exports.Tab = _tab2.default;
+	module.exports = {
+	    Tabs: Tabs, Tab: Tab
+	};
 
 /***/ }),
 /* 11 */

@@ -1,6 +1,6 @@
-import Tabs from './index.vue';
-import Tab  from './tab.vue';
+var Tabs = require('./index.vue');
+var Tab = require('./tab.vue');
 
-export {
+module.exports = {
     Tabs, Tab
 }

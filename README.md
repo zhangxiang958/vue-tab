@@ -9,12 +9,12 @@ vue-tab is a touch swipe tab for vue.js.
 ## Install
 
 ```
-
+npm install --save vue-swipe-tab
 ```
 
 ### Import using module
 ```
-import { Tabs, Tab }  from 'Tab';
+import { Tabs, Tab }  from 'vue-swipe-tab';
 ```
 
 ## Usage
