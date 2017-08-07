@@ -150,6 +150,8 @@
                     this.reset();
                 }
                 this.swipeType = INIT;
+                this.distance.left = 0;
+                this.distance.top = 0;
             }
         }
     }
