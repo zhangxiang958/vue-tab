@@ -118,7 +118,7 @@
             onTouchMove(event) {
                 const touchPoint = event.changedTouches[0] || event.touches[0];
                 const distanceLeft = touchPoint.pageX - this.touchPoint.startLeft;
-                console.log('distance:' + distanceLeft);
+                // console.log('distance:' + distanceLeft);
                 this.distance.left = distanceLeft;
                 const distanceTop = Math.abs(touchPoint.pageY - this.touchPoint.startTop);
                 // console.log('distanceTop:' + distanceTop);
@@ -145,13 +145,13 @@
                 var quick = new Date().getTime() - this.startTime < 1000;
                 // console.log(quick);
                 if(this.distance.left < -(100 * this.dpr) || (quick && this.distance.left < -15 && this.distance.top / this.distance.left > -6)) {
-                    console.log('next');
-                    console.log(-(100 * this.dpr));
+                    // console.log('next');
+                    // console.log(-(100 * this.dpr));
                     this.next();
                 } else if(this.distance.left > (100 * this.dpr) || (quick && this.distance.left > 15 && this.distance.top / this.distance.left < 6)) {
-                    console.log(this.distance.left);
-                    console.log(100 * this.dpr);
-                    console.log('prev');
+                    // console.log(this.distance.left);
+                    // console.log(100 * this.dpr);
+                    // console.log('prev');
                     this.prev();
                 } else {
                     this.reset();
