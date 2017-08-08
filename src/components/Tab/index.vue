@@ -21,6 +21,7 @@
 
                 this.children = document.querySelectorAll('.tabs-panel-content');
             });
+            this.initDPR();
         },
         watch: {
             'indexTab'() {
@@ -46,7 +47,8 @@
                 currentPage: 0,
                 translateX: 0,
                 startTranslateX: 0,
-                swipeType: INIT
+                swipeType: INIT,
+                dpr: 1,
             }
         },
         methods: {
@@ -116,7 +118,7 @@
             onTouchMove(event) {
                 const touchPoint = event.changedTouches[0] || event.touches[0];
                 const distanceLeft = touchPoint.pageX - this.touchPoint.startLeft;
-                // console.log('distance:' + distanceLeft);
+                console.log('distance:' + distanceLeft);
                 this.distance.left = distanceLeft;
                 const distanceTop = Math.abs(touchPoint.pageY - this.touchPoint.startTop);
                 // console.log('distanceTop:' + distanceTop);
@@ -142,9 +144,14 @@
             onTouchEnd(event) {
                 var quick = new Date().getTime() - this.startTime < 1000;
                 // console.log(quick);
-                if(this.distance.left < -100 || (quick && this.distance.left < -15 && this.distance.top / this.distance.left > -6)) {
+                if(this.distance.left < -(100 * this.dpr) || (quick && this.distance.left < -15 && this.distance.top / this.distance.left > -6)) {
+                    console.log('next');
+                    console.log(-(100 * this.dpr));
                     this.next();
-                } else if(this.distance.left > 100 || (quick && this.distance.left > 15 && this.distance.top / this.distance.left < 6)) {
+                } else if(this.distance.left > (100 * this.dpr) || (quick && this.distance.left > 15 && this.distance.top / this.distance.left < 6)) {
+                    console.log(this.distance.left);
+                    console.log(100 * this.dpr);
+                    console.log('prev');
                     this.prev();
                 } else {
                     this.reset();
@@ -152,6 +159,23 @@
                 this.swipeType = INIT;
                 this.distance.left = 0;
                 this.distance.top = 0;
+            },
+            initDPR() {
+                var win = window;
+                var isAndroid = win.navigator.appVersion.match(/android/gi);
+                var isIPhone = win.navigator.appVersion.match(/iphone/gi);
+                var devicePixelRatio = win.devicePixelRatio;
+                if(isIPhone) {
+                    if(devicePixelRatio >= 3 && this.dpr) {
+                        this.dpr = 3;
+                    } else if(devicePixelRatio >= 2 && this.dpr){
+                        this.dpr = 2;
+                    } else {
+                        this.dpr = 1;
+                    }
+                } else {
+                    this.dpr = 1;
+                }
             }
         }
     }
@@ -165,7 +189,7 @@
                     :class="activeHash === tab.tabHash ? 'active' : ''"
                     :style="{ lineHeight: tab.tabHeight }"
                     class="tabs-titleLink"
-                    @click="setPage(index)">
+                    @touchstart="setPage(index)">
                     {{ tab.tabHeader }}
                 </a>
             </li>
