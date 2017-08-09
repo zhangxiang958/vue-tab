@@ -1,6 +1,7 @@
-var Tabs = require('./index.vue');
-var Tab = require('./tab.vue');
+var Tabs = require('./lib/index.vue');
+var Tab = require('./lib/tab.vue');
 
 module.exports = {
-    Tabs, Tab
+    Tabs: Tabs,
+    Tab: Tab
 }
