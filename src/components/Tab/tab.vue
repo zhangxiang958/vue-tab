@@ -1,7 +1,7 @@
 <script>
     export default {
         props: {
-            name: {
+            label: {
                 required: true
             },
             hash: {
@@ -33,10 +33,10 @@
         },
         computed: {
             tabHeader() {
-                return this.frontIcon + this.name + this.postIcon + this.RedDot;
+                return this.frontIcon + this.label + this.postIcon + this.RedDot;
             },
             tabHash() {
-                return `#${this.hash.toLowerCase()}`;
+                return `${this.hash.toLowerCase()}`;
             },
             fontSize() {
                 return (parseInt(this.fontsize) / 75) + 'rem';

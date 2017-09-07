@@ -54,8 +54,13 @@
 
 	var _app2 = _interopRequireDefault(_app);
 
+	var _Tab = __webpack_require__(11);
+
+	var _Tab2 = _interopRequireDefault(_Tab);
+
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
+	_vue2.default.use(_Tab2.default);
 	var app = new _vue2.default({
 	    components: {
 	        App: _app2.default
@@ -9767,7 +9772,7 @@
 	  /* script */
 	  __webpack_require__(9),
 	  /* template */
-	  __webpack_require__(21),
+	  __webpack_require__(10),
 	  /* styles */
 	  injectStyle,
 	  /* scopeId */
@@ -10273,15 +10278,16 @@
 
 /***/ }),
 /* 9 */
-/***/ (function(module, exports, __webpack_require__) {
+/***/ (function(module, exports) {
 
-	'use strict';
+	"use strict";
 
 	Object.defineProperty(exports, "__esModule", {
 	    value: true
 	});
 
-	var _Tab = __webpack_require__(10);
+	// import VueRouter  from 'vendor/vue-router';
+	// import { Tabs, Tab }  from './Tab';
 
 	exports.default = {
 	    created: function created() {},
@@ -10293,38 +10299,88 @@
 	    },
 
 	    components: {
-	        Tabs: _Tab.Tabs, Tab: _Tab.Tab
+	        // Tabs, Tab
 	    }
 	};
-	// import VueRouter  from 'vendor/vue-router';
 
 /***/ }),
 /* 10 */
 /***/ (function(module, exports, __webpack_require__) {
 
-	'use strict';
-
-	var Tabs = __webpack_require__(11);
-	var Tab = __webpack_require__(16);
-
-	module.exports = {
-	    Tabs: Tabs, Tab: Tab
-	};
+	module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
+	  return _c('div', {
+	    staticClass: "app"
+	  }, [_c('Tabs', {
+	    attrs: {
+	      "indexTab": "convince"
+	    }
+	  }, [_c('TabPanel', {
+	    attrs: {
+	      "label": "好友榜",
+	      "hash": "friend",
+	      "fontsize": "36",
+	      "tabheight": "90"
+	    }
+	  }, [_c('div', {
+	    staticClass: "first"
+	  })]), _vm._v(" "), _c('TabPanel', {
+	    attrs: {
+	      "label": "全省榜",
+	      "hash": "convince",
+	      "fontsize": "36",
+	      "tabheight": "90"
+	    }
+	  }, [_c('div', {
+	    staticClass: "second"
+	  })]), _vm._v(" "), _c('TabPanel', {
+	    attrs: {
+	      "label": "全国榜",
+	      "hash": "country",
+	      "fontsize": "36",
+	      "tabheight": "90"
+	    }
+	  }, [_c('div', {
+	    staticClass: "three"
+	  })])], 1)], 1)
+	},staticRenderFns: []}
+	module.exports.render._withStripped = true
+	if (false) {
+	  module.hot.accept()
+	  if (module.hot.data) {
+	     require("vue-hot-reload-api").rerender("data-v-73e34a22", module.exports)
+	  }
+	}
 
 /***/ }),
 /* 11 */
 /***/ (function(module, exports, __webpack_require__) {
 
+	'use strict';
+
+	var Tabs = __webpack_require__(12);
+	var Tab = __webpack_require__(17);
+
+	module.exports = {
+	    install: function install(Vue) {
+	        Vue.component('Tabs', Tabs);
+	        Vue.component('TabPanel', Tab);
+	    }
+	};
+
+/***/ }),
+/* 12 */
+/***/ (function(module, exports, __webpack_require__) {
+
 	var disposed = false
 	function injectStyle (ssrContext) {
 	  if (disposed) return
-	  __webpack_require__(12)
+	  __webpack_require__(13)
 	}
 	var Component = __webpack_require__(8)(
 	  /* script */
-	  __webpack_require__(14),
-	  /* template */
 	  __webpack_require__(15),
+	  /* template */
+	  __webpack_require__(16),
 	  /* styles */
 	  injectStyle,
 	  /* scopeId */
@@ -10356,13 +10412,13 @@
 
 
 /***/ }),
-/* 12 */
+/* 13 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	// style-loader: Adds some css to the DOM by adding a <style> tag
 
 	// load the styles
-	var content = __webpack_require__(13);
+	var content = __webpack_require__(14);
 	if(typeof content === 'string') content = [[module.id, content, '']];
 	if(content.locals) module.exports = content.locals;
 	// add the styles to the DOM
@@ -10382,7 +10438,7 @@
 	}
 
 /***/ }),
-/* 13 */
+/* 14 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	exports = module.exports = __webpack_require__(5)(undefined);
@@ -10390,13 +10446,13 @@
 
 
 	// module
-	exports.push([module.id, "\n.tabs-container[data-v-9edb390e] {\n  width: 100%;\n}\n.tabs-container .tabs-panel[data-v-9edb390e] {\n    width: 100%;\n    height: 100%;\n    font-size: 0;\n    white-space: nowrap;\n    transition: all 0.2s ease;\n}\n.tabs-container .tabs-panel .tabs-panel-content[data-v-9edb390e] {\n      display: inline-block;\n      width: 100%;\n      font-size: 0.16rem;\n      vertical-align: top;\n}\n.tabs-container .tabContent-wrap[data-v-9edb390e] {\n    width: 100%;\n    overflow: hidden;\n}\n.tabs-container .tabs-list[data-v-9edb390e] {\n    position: relative;\n    padding: 0;\n    border-bottom: 1px solid #ccc;\n    list-style: none;\n    overflow: hidden;\n}\n.tabs-container .tabs-title[data-v-9edb390e] {\n    position: relative;\n    float: left;\n    width: 50%;\n    height: 1.2rem;\n    line-height: 1.2rem;\n    text-align: center;\n    font-size: 0.48rem;\n}\n.tabs-container .tabs-title[data-v-9edb390e]:after {\n      content: '';\n      display: block;\n      position: absolute;\n      top: 50%;\n      right: 0;\n      transform: translateY(-50%);\n      width: 0.04rem;\n      height: 0.48rem;\n      background: #e6e6e6;\n}\n.tabs-container .tabs-title[data-v-9edb390e]:last-child:after {\n      display: none;\n}\n.tabs-container .tabs-title .tabs-titleLink[data-v-9edb390e] {\n      display: block;\n      width: 100%;\n      height: 100%;\n      position: relative;\n      color: #999;\n}\n.tabs-container .tabs-title .tabs-titleLink[data-v-9edb390e]:hover {\n        text-decoration: none;\n        color: #000;\n}\n.tabs-container .tabs-title .tabs-titleLink[data-v-9edb390e]:focus {\n        outline: none;\n}\n.tabs-container .tabs-title .tabs-titleLink.active[data-v-9edb390e] {\n        color: #000;\n        font-weight: 900;\n}\n.tabs-container .tabs-title .tabs-titleLink[data-v-9edb390e]:after {\n        content: '';\n        display: none;\n        position: absolute;\n        bottom: 0;\n        left: 50%;\n        transform: translateX(-50%);\n        width: 100%;\n        height: 0.10667rem;\n        background: #fdde02;\n}\n.tabs-container .tabs-title .tabs-titleLink.active[data-v-9edb390e]:after {\n        display: block;\n}\n", ""]);
+	exports.push([module.id, "\n.tabs-container[data-v-9edb390e] {\n  width: 100%;\n}\n.tabs-container .tabs-panel[data-v-9edb390e] {\n    width: 100%;\n    height: 100%;\n    font-size: 0;\n    white-space: nowrap;\n}\n.tabs-container .tabs-panel.transition[data-v-9edb390e] {\n      transition: all 0.2s ease;\n}\n.tabs-container .tabs-panel .tabs-panel-content[data-v-9edb390e] {\n      display: inline-block;\n      width: 100%;\n      font-size: 0.16rem;\n      vertical-align: top;\n}\n.tabs-container .tabContent-wrap[data-v-9edb390e] {\n    width: 100%;\n    overflow: hidden;\n}\n.tabs-container .tabs-list[data-v-9edb390e] {\n    position: relative;\n    padding: 0;\n    border-bottom: 1px solid #ccc;\n    list-style: none;\n    overflow: hidden;\n}\n.tabs-container .tabs-title[data-v-9edb390e] {\n    position: relative;\n    float: left;\n    width: 50%;\n    height: 1.2rem;\n    line-height: 1.2rem;\n    text-align: center;\n    font-size: 0.48rem;\n}\n.tabs-container .tabs-title[data-v-9edb390e]:after {\n      content: '';\n      display: block;\n      position: absolute;\n      top: 50%;\n      right: 0;\n      transform: translateY(-50%);\n      width: 0.04rem;\n      height: 0.48rem;\n      background: #e6e6e6;\n}\n.tabs-container .tabs-title[data-v-9edb390e]:last-child:after {\n      display: none;\n}\n.tabs-container .tabs-title .tabs-titleLink[data-v-9edb390e] {\n      display: block;\n      width: 100%;\n      height: 100%;\n      position: relative;\n      color: #999;\n}\n.tabs-container .tabs-title .tabs-titleLink[data-v-9edb390e]:hover {\n        text-decoration: none;\n        color: #000;\n}\n.tabs-container .tabs-title .tabs-titleLink[data-v-9edb390e]:focus {\n        outline: none;\n}\n.tabs-container .tabs-title .tabs-titleLink.active[data-v-9edb390e] {\n        color: #000;\n        font-weight: 900;\n}\n.tabs-container .tabs-title .tabs-titleLink[data-v-9edb390e]:after {\n        content: '';\n        display: none;\n        position: absolute;\n        bottom: 0;\n        left: 50%;\n        transform: translateX(-50%);\n        width: 100%;\n        height: 0.10667rem;\n        background: #fdde02;\n}\n.tabs-container .tabs-title .tabs-titleLink.active[data-v-9edb390e]:after {\n        display: block;\n}\n", ""]);
 
 	// exports
 
 
 /***/ }),
-/* 14 */
+/* 15 */
 /***/ (function(module, exports) {
 
 	'use strict';
@@ -10421,13 +10477,22 @@
 	        var _this = this;
 
 	        if (this.tabs.length) {
-	            this.indexTab ? this.selectTab(this.indexTab) : this.selectTab(this.tabs[0].tabHash);
+	            // this.indexTab ? this.selectTab(this.indexTab) : this.selectTab(this.tabs[0].tabHash);
+	            if (this.indexTab) {
+	                // this.selectTab(this.indexTab);
+	                this.tabs.forEach(function (item, idx) {
+	                    item.tabHash === _this.indexTab && _this.setPage(idx);
+	                });
+	            } else {
+	                this.selectTab(this.tabs[0].tabHash);
+	                this.setPage(0);
+	            }
 	        }
-	        this.setPage(0);
 	        this.$nextTick(function () {
 
 	            _this.children = document.querySelectorAll('.tabs-panel-content');
 	        });
+	        this.initDPR();
 	    },
 
 	    watch: {
@@ -10453,14 +10518,16 @@
 	            },
 	            currentPage: 0,
 	            translateX: 0,
+	            transitionOrnot: false,
 	            startTranslateX: 0,
-	            swipeType: INIT
+	            swipeType: INIT,
+	            dpr: 1
 	        };
 	    },
 
 	    methods: {
 	        selectTab: function selectTab(hash) {
-
+	            // console.log(hash);
 	            this.tabs.forEach(function (tab) {
 	                tab.isActive = tab.tabHash === hash;
 	            });
@@ -10504,6 +10571,11 @@
 	            });
 	            this.selectTab(this.tabs[page].tabHash);
 	            this.$emit('changePage', this.currentPage);
+	            setTimeout(function () {
+	                if (!_this2.transitionOrnot) {
+	                    _this2.transitionOrnot = true;
+	                }
+	            });
 	        },
 	        onTouchStart: function onTouchStart(event) {
 	            var touchPoint = event.changedTouches[0] || event.touches[0];
@@ -10552,20 +10624,44 @@
 	        onTouchEnd: function onTouchEnd(event) {
 	            var quick = new Date().getTime() - this.startTime < 1000;
 	            // console.log(quick);
-	            if (this.distance.left < -100 || quick && this.distance.left < -15 && this.distance.top / this.distance.left > -6) {
+	            if (this.distance.left < -(100 * this.dpr) || quick && this.distance.left < -15 && this.distance.top / this.distance.left > -6) {
+	                // console.log('next');
+	                // console.log(-(100 * this.dpr));
 	                this.next();
-	            } else if (this.distance.left > 100 || quick && this.distance.left > 15 && this.distance.top / this.distance.left < 6) {
+	            } else if (this.distance.left > 100 * this.dpr || quick && this.distance.left > 15 && this.distance.top / this.distance.left < 6) {
+	                // console.log(this.distance.left);
+	                // console.log(100 * this.dpr);
+	                // console.log('prev');
 	                this.prev();
 	            } else {
 	                this.reset();
 	            }
 	            this.swipeType = INIT;
+	            this.distance.left = 0;
+	            this.distance.top = 0;
+	        },
+	        initDPR: function initDPR() {
+	            var win = window;
+	            var isAndroid = win.navigator.appVersion.match(/android/gi);
+	            var isIPhone = win.navigator.appVersion.match(/iphone/gi);
+	            var devicePixelRatio = win.devicePixelRatio;
+	            if (isIPhone) {
+	                if (devicePixelRatio >= 3 && this.dpr) {
+	                    this.dpr = 3;
+	                } else if (devicePixelRatio >= 2 && this.dpr) {
+	                    this.dpr = 2;
+	                } else {
+	                    this.dpr = 1;
+	                }
+	            } else {
+	                this.dpr = 1;
+	            }
 	        }
 	    }
 	};
 
 /***/ }),
-/* 15 */
+/* 16 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
@@ -10578,6 +10674,7 @@
 	    }
 	  }, _vm._l((_vm.tabs), function(tab, index) {
 	    return _c('li', {
+	      key: index,
 	      staticClass: "tabs-title",
 	      style: ({
 	        width: (100 / _vm.tabs.length) + '%',
@@ -10591,6 +10688,9 @@
 	        lineHeight: tab.tabHeight
 	      }),
 	      on: {
+	        "touchstart": function($event) {
+	          _vm.setPage(index)
+	        },
 	        "click": function($event) {
 	          _vm.setPage(index)
 	        }
@@ -10611,6 +10711,9 @@
 	    }
 	  }, [_c('div', {
 	    staticClass: "tabs-panel",
+	    class: {
+	      'transition': _vm.transitionOrnot
+	    },
 	    style: ({
 	      'transform': ("translate3d(" + _vm.translateX + "px, 0, 0)")
 	    })
@@ -10625,19 +10728,19 @@
 	}
 
 /***/ }),
-/* 16 */
+/* 17 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	var disposed = false
 	function injectStyle (ssrContext) {
 	  if (disposed) return
-	  __webpack_require__(17)
+	  __webpack_require__(18)
 	}
 	var Component = __webpack_require__(8)(
 	  /* script */
-	  __webpack_require__(19),
-	  /* template */
 	  __webpack_require__(20),
+	  /* template */
+	  __webpack_require__(21),
 	  /* styles */
 	  injectStyle,
 	  /* scopeId */
@@ -10669,13 +10772,13 @@
 
 
 /***/ }),
-/* 17 */
+/* 18 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	// style-loader: Adds some css to the DOM by adding a <style> tag
 
 	// load the styles
-	var content = __webpack_require__(18);
+	var content = __webpack_require__(19);
 	if(typeof content === 'string') content = [[module.id, content, '']];
 	if(content.locals) module.exports = content.locals;
 	// add the styles to the DOM
@@ -10695,7 +10798,7 @@
 	}
 
 /***/ }),
-/* 18 */
+/* 19 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	exports = module.exports = __webpack_require__(5)(undefined);
@@ -10709,7 +10812,7 @@
 
 
 /***/ }),
-/* 19 */
+/* 20 */
 /***/ (function(module, exports) {
 
 	'use strict';
@@ -10719,7 +10822,7 @@
 	});
 	exports.default = {
 	    props: {
-	        name: {
+	        label: {
 	            required: true
 	        },
 	        hash: {
@@ -10752,10 +10855,10 @@
 
 	    computed: {
 	        tabHeader: function tabHeader() {
-	            return this.frontIcon + this.name + this.postIcon + this.RedDot;
+	            return this.frontIcon + this.label + this.postIcon + this.RedDot;
 	        },
 	        tabHash: function tabHash() {
-	            return '#' + this.hash.toLowerCase();
+	            return '' + this.hash.toLowerCase();
 	        },
 	        fontSize: function fontSize() {
 	            return parseInt(this.fontsize) / 75 + 'rem';
@@ -10767,7 +10870,7 @@
 	};
 
 /***/ }),
-/* 20 */
+/* 21 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
@@ -10780,50 +10883,6 @@
 	  module.hot.accept()
 	  if (module.hot.data) {
 	     require("vue-hot-reload-api").rerender("data-v-81764f08", module.exports)
-	  }
-	}
-
-/***/ }),
-/* 21 */
-/***/ (function(module, exports, __webpack_require__) {
-
-	module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
-	  return _c('div', {
-	    staticClass: "app"
-	  }, [_c('Tabs', [_c('Tab', {
-	    attrs: {
-	      "name": "好友榜",
-	      "hash": "friend",
-	      "fontsize": "36",
-	      "tabheight": "90"
-	    }
-	  }, [_c('div', {
-	    staticClass: "first"
-	  })]), _vm._v(" "), _c('Tab', {
-	    attrs: {
-	      "name": "全省榜",
-	      "hash": "convince",
-	      "fontsize": "36",
-	      "tabheight": "90"
-	    }
-	  }, [_c('div', {
-	    staticClass: "second"
-	  })]), _vm._v(" "), _c('Tab', {
-	    attrs: {
-	      "name": "全国榜",
-	      "hash": "country",
-	      "fontsize": "36",
-	      "tabheight": "90"
-	    }
-	  }, [_c('div', {
-	    staticClass: "three"
-	  })])], 1)], 1)
-	},staticRenderFns: []}
-	module.exports.render._withStripped = true
-	if (false) {
-	  module.hot.accept()
-	  if (module.hot.data) {
-	     require("vue-hot-reload-api").rerender("data-v-73e34a22", module.exports)
 	  }
 	}
 

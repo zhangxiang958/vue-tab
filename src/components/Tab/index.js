@@ -1,7 +1,9 @@
-var Tabs = require('./lib/index.vue');
-var Tab = require('./lib/tab.vue');
+var Tabs = require('./index.vue');
+var Tab = require('./tab.vue');
 
 module.exports = {
-    Tabs: Tabs,
-    Tab: Tab
+    install: function(Vue){
+        Vue.component('Tabs', Tabs);
+        Vue.component('TabPanel', Tab);
+    }
 }

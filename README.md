@@ -30,14 +30,14 @@ methods: {
 
 <template>
     <div class="app">
-        <Tabs @changePage="changeFunc">
-            <Tab name="好友榜" hash="friend" fontsize="36" tabheight="90">
+        <Tabs @changePage="changeFunc" indexTab="friend">
+            <Tab label="好友榜" hash="friend" fontsize="36" tabheight="90">
                 <div class="first"></div>
             </Tab>
-            <Tab name="全省榜" hash="convince" fontsize="36" tabheight="90">
+            <Tab label="全省榜" hash="convince" fontsize="36" tabheight="90">
                 <div class="second"></div>
             </Tab>
-            <Tab name="全国榜" hash="country" fontsize="36" tabheight="90">
+            <Tab label="全国榜" hash="country" fontsize="36" tabheight="90">
                 <div class="three"></div>
             </Tab>
         </Tabs>
@@ -52,8 +52,9 @@ Here list Props on swipe component
 
 | Option | Description |
 | ----- | ----- |
-| name | Required, the text of tab header |
+| label | Required, the text of tab header |
 | hash | Required, the hash of tab page |
+| indexTab | set the index tab by tab's hash |
 | fontSize | String, the fontSize of tab Header, is caculated by rem |
 | tabheight | String, the tabHeight of tabHeader, is caculated by rem |
 | changePage | Event, it will be fired after the page change, you can get the currentPage index in the callback function |

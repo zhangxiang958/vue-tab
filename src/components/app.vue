@@ -1,6 +1,6 @@
 <script>
     // import VueRouter  from 'vendor/vue-router';
-    import { Tabs, Tab }  from './Tab';
+    // import { Tabs, Tab }  from './Tab';
 
     export default {
         created(){
@@ -15,23 +15,23 @@
             }
         },
         components: {
-            Tabs, Tab
+            // Tabs, Tab
         }
     }
 </script>
 
 <template>
     <div class="app">
-        <Tabs>
-            <Tab name="好友榜" hash="friend" fontsize="36" tabheight="90">
+        <Tabs indexTab="convince">
+            <TabPanel label="好友榜" hash="friend" fontsize="36" tabheight="90">
                 <div class="first"></div>
-            </Tab>
-            <Tab name="全省榜" hash="convince" fontsize="36" tabheight="90">
+            </TabPanel>
+            <TabPanel label="全省榜" hash="convince" fontsize="36" tabheight="90">
                 <div class="second"></div>
-            </Tab>
-            <Tab name="全国榜" hash="country" fontsize="36" tabheight="90">
+            </TabPanel>
+            <TabPanel label="全国榜" hash="country" fontsize="36" tabheight="90">
                 <div class="three"></div>
-            </Tab>
+            </TabPanel>
         </Tabs>
     </div>
 </template>

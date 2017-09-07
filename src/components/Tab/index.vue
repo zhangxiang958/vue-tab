@@ -14,9 +14,17 @@
         mounted(){
 
             if(this.tabs.length) {
-                this.indexTab ? this.selectTab(this.indexTab) : this.selectTab(this.tabs[0].tabHash);
+                // this.indexTab ? this.selectTab(this.indexTab) : this.selectTab(this.tabs[0].tabHash);
+                if(this.indexTab) {
+                    // this.selectTab(this.indexTab);
+                    this.tabs.forEach((item, idx) => {
+                        item.tabHash === this.indexTab && this.setPage(idx);
+                    });
+                } else {
+                    this.selectTab(this.tabs[0].tabHash);
+                    this.setPage(0);
+                }
             }
-            this.setPage(0);
             this.$nextTick(() => {
 
                 this.children = document.querySelectorAll('.tabs-panel-content');
@@ -46,6 +54,7 @@
                 },
                 currentPage: 0,
                 translateX: 0,
+                transitionOrnot: false,
                 startTranslateX: 0,
                 swipeType: INIT,
                 dpr: 1,
@@ -53,7 +62,7 @@
         },
         methods: {
             selectTab(hash){
-
+                // console.log(hash);
                 this.tabs.forEach((tab) => {
                     tab.isActive = (tab.tabHash === hash);
                 });
@@ -96,6 +105,11 @@
                 });
                 this.selectTab(this.tabs[page].tabHash);
                 this.$emit('changePage', this.currentPage);
+                setTimeout(() => {
+                    if(!this.transitionOrnot) {
+                        this.transitionOrnot = true;
+                    }
+                });
             },
             onTouchStart(event) {
                 const touchPoint = event.changedTouches[0] || event.touches[0];
@@ -184,12 +198,16 @@
 <template>
     <div class="tabs-container">
         <ul class="tabs-list" role="tablist">
-            <li v-for="(tab,index) in tabs" class="tabs-title" :style="{width: (100 / tabs.length) + '%', fontSize: tab.fontSize, height: tab.tabHeight}">
+            <li v-for="(tab,index) in tabs" 
+                :key="index"
+                class="tabs-title" 
+                :style="{width: (100 / tabs.length) + '%', fontSize: tab.fontSize, height: tab.tabHeight}">
                 <a
                     :class="activeHash === tab.tabHash ? 'active' : ''"
                     :style="{ lineHeight: tab.tabHeight }"
                     class="tabs-titleLink"
-                    @touchstart="setPage(index)">
+                    @touchstart="setPage(index)"
+                    @click="setPage(index)">
                     {{ tab.tabHeader }}
                 </a>
             </li>
@@ -201,6 +219,7 @@
             @touchend="onTouchEnd($event)"
             >
             <div class="tabs-panel"
+            :class="{ 'transition': transitionOrnot }"
             :style="{ 'transform': `translate3d(${translateX}px, 0, 0)` }"
             >
                 <slot />
@@ -224,7 +243,10 @@
             height: 100%;
             font-size: 0;
             white-space: nowrap;
-            transition: all 0.2s ease;
+            // transition: all 0.2s ease;
+            &.transition {
+                transition: all 0.2s ease;
+            }
             .tabs-panel-content {
                 display: inline-block;
                 width: 100%;
