@@ -9,18 +9,18 @@ vue-tab is a touch swipe tab for vue.js.
 ## Install
 
 ```
-npm install --save vue-swipe-tab
+npm install --save vue-swipe-tab@2.0.2
 ```
 
 ### Import using module
 ```
-import { Tabs, Tab }  from 'vue-swipe-tab';
+import Tab from 'vue-swipe-tab';
+Vue.use(Tab);
 ```
 
 ## Usage
 
 ```
-import { Tabs, Tab }  from './Tab';
 
 methods: {
     changePage(idx) {
@@ -31,13 +31,13 @@ methods: {
 <template>
     <div class="app">
         <Tabs @changePage="changeFunc" indexTab="friend">
-            <Tab label="好友榜" hash="friend" fontsize="36" tabheight="90">
+            <Tab label="好友榜" hash="friend" fontsize="36" tabheight="90" color="red">
                 <div class="first"></div>
             </Tab>
-            <Tab label="全省榜" hash="convince" fontsize="36" tabheight="90">
+            <Tab label="全省榜" hash="convince" fontsize="36" tabheight="90" color="red">
                 <div class="second"></div>
             </Tab>
-            <Tab label="全国榜" hash="country" fontsize="36" tabheight="90">
+            <Tab label="全国榜" hash="country" fontsize="36" tabheight="90" color="red">
                 <div class="three"></div>
             </Tab>
         </Tabs>
@@ -55,6 +55,7 @@ Here list Props on swipe component
 | label | Required, the text of tab header |
 | hash | Required, the hash of tab page |
 | indexTab | set the index tab by tab's hash |
+| color | set the color of tab header cursor |
 | fontSize | String, the fontSize of tab Header, is caculated by rem |
 | tabheight | String, the tabHeight of tabHeader, is caculated by rem |
 | changePage | Event, it will be fired after the page change, you can get the currentPage index in the callback function |

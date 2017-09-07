@@ -209,6 +209,7 @@
                     @touchstart="setPage(index)"
                     @click="setPage(index)">
                     {{ tab.tabHeader }}
+                    <i class="cursor" :style="{ 'background': tab.color ? tab.color : '#fdde02' }"></i>
                 </a>
             </li>
         </ul>
@@ -304,19 +305,18 @@
                     color: #000;
                     font-weight: 900;
                 }
-                &:after {
+                .cursor {
                     content: '';
                     display: none;
                     position: absolute;
                     bottom: 0;
                     left: 50%;
                     transform: translateX(-50%);
-                    // width: rem(128);
                     width: 100%;
                     height: rem(8);
                     background: #fdde02;
                 }
-                &.active:after {
+                &.active .cursor {
                     display: block;
                 }
             }

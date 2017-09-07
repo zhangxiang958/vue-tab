@@ -23,13 +23,13 @@
 <template>
     <div class="app">
         <Tabs indexTab="convince">
-            <TabPanel label="好友榜" hash="friend" fontsize="36" tabheight="90">
+            <TabPanel label="好友榜" hash="friend" fontsize="36" tabheight="90" color="red">
                 <div class="first"></div>
             </TabPanel>
-            <TabPanel label="全省榜" hash="convince" fontsize="36" tabheight="90">
+            <TabPanel label="全省榜" hash="convince" fontsize="36" tabheight="90" color="red">
                 <div class="second"></div>
             </TabPanel>
-            <TabPanel label="全国榜" hash="country" fontsize="36" tabheight="90">
+            <TabPanel label="全国榜" hash="country" fontsize="36" tabheight="90" color="red">
                 <div class="three"></div>
             </TabPanel>
         </Tabs>

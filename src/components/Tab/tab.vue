@@ -24,6 +24,9 @@
             RedDot: {
                 type: String,
                 default: ''
+            },
+            color: {
+                type: String
             }
         },
         data() {

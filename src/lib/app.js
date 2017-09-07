@@ -10319,7 +10319,8 @@
 	      "label": "好友榜",
 	      "hash": "friend",
 	      "fontsize": "36",
-	      "tabheight": "90"
+	      "tabheight": "90",
+	      "color": "red"
 	    }
 	  }, [_c('div', {
 	    staticClass: "first"
@@ -10328,7 +10329,8 @@
 	      "label": "全省榜",
 	      "hash": "convince",
 	      "fontsize": "36",
-	      "tabheight": "90"
+	      "tabheight": "90",
+	      "color": "red"
 	    }
 	  }, [_c('div', {
 	    staticClass: "second"
@@ -10337,7 +10339,8 @@
 	      "label": "全国榜",
 	      "hash": "country",
 	      "fontsize": "36",
-	      "tabheight": "90"
+	      "tabheight": "90",
+	      "color": "red"
 	    }
 	  }, [_c('div', {
 	    staticClass: "three"
@@ -10446,7 +10449,7 @@
 
 
 	// module
-	exports.push([module.id, "\n.tabs-container[data-v-9edb390e] {\n  width: 100%;\n}\n.tabs-container .tabs-panel[data-v-9edb390e] {\n    width: 100%;\n    height: 100%;\n    font-size: 0;\n    white-space: nowrap;\n}\n.tabs-container .tabs-panel.transition[data-v-9edb390e] {\n      transition: all 0.2s ease;\n}\n.tabs-container .tabs-panel .tabs-panel-content[data-v-9edb390e] {\n      display: inline-block;\n      width: 100%;\n      font-size: 0.16rem;\n      vertical-align: top;\n}\n.tabs-container .tabContent-wrap[data-v-9edb390e] {\n    width: 100%;\n    overflow: hidden;\n}\n.tabs-container .tabs-list[data-v-9edb390e] {\n    position: relative;\n    padding: 0;\n    border-bottom: 1px solid #ccc;\n    list-style: none;\n    overflow: hidden;\n}\n.tabs-container .tabs-title[data-v-9edb390e] {\n    position: relative;\n    float: left;\n    width: 50%;\n    height: 1.2rem;\n    line-height: 1.2rem;\n    text-align: center;\n    font-size: 0.48rem;\n}\n.tabs-container .tabs-title[data-v-9edb390e]:after {\n      content: '';\n      display: block;\n      position: absolute;\n      top: 50%;\n      right: 0;\n      transform: translateY(-50%);\n      width: 0.04rem;\n      height: 0.48rem;\n      background: #e6e6e6;\n}\n.tabs-container .tabs-title[data-v-9edb390e]:last-child:after {\n      display: none;\n}\n.tabs-container .tabs-title .tabs-titleLink[data-v-9edb390e] {\n      display: block;\n      width: 100%;\n      height: 100%;\n      position: relative;\n      color: #999;\n}\n.tabs-container .tabs-title .tabs-titleLink[data-v-9edb390e]:hover {\n        text-decoration: none;\n        color: #000;\n}\n.tabs-container .tabs-title .tabs-titleLink[data-v-9edb390e]:focus {\n        outline: none;\n}\n.tabs-container .tabs-title .tabs-titleLink.active[data-v-9edb390e] {\n        color: #000;\n        font-weight: 900;\n}\n.tabs-container .tabs-title .tabs-titleLink[data-v-9edb390e]:after {\n        content: '';\n        display: none;\n        position: absolute;\n        bottom: 0;\n        left: 50%;\n        transform: translateX(-50%);\n        width: 100%;\n        height: 0.10667rem;\n        background: #fdde02;\n}\n.tabs-container .tabs-title .tabs-titleLink.active[data-v-9edb390e]:after {\n        display: block;\n}\n", ""]);
+	exports.push([module.id, "\n.tabs-container[data-v-9edb390e] {\n  width: 100%;\n}\n.tabs-container .tabs-panel[data-v-9edb390e] {\n    width: 100%;\n    height: 100%;\n    font-size: 0;\n    white-space: nowrap;\n}\n.tabs-container .tabs-panel.transition[data-v-9edb390e] {\n      transition: all 0.2s ease;\n}\n.tabs-container .tabs-panel .tabs-panel-content[data-v-9edb390e] {\n      display: inline-block;\n      width: 100%;\n      font-size: 0.16rem;\n      vertical-align: top;\n}\n.tabs-container .tabContent-wrap[data-v-9edb390e] {\n    width: 100%;\n    overflow: hidden;\n}\n.tabs-container .tabs-list[data-v-9edb390e] {\n    position: relative;\n    padding: 0;\n    border-bottom: 1px solid #ccc;\n    list-style: none;\n    overflow: hidden;\n}\n.tabs-container .tabs-title[data-v-9edb390e] {\n    position: relative;\n    float: left;\n    width: 50%;\n    height: 1.2rem;\n    line-height: 1.2rem;\n    text-align: center;\n    font-size: 0.48rem;\n}\n.tabs-container .tabs-title[data-v-9edb390e]:after {\n      content: '';\n      display: block;\n      position: absolute;\n      top: 50%;\n      right: 0;\n      transform: translateY(-50%);\n      width: 0.04rem;\n      height: 0.48rem;\n      background: #e6e6e6;\n}\n.tabs-container .tabs-title[data-v-9edb390e]:last-child:after {\n      display: none;\n}\n.tabs-container .tabs-title .tabs-titleLink[data-v-9edb390e] {\n      display: block;\n      width: 100%;\n      height: 100%;\n      position: relative;\n      color: #999;\n}\n.tabs-container .tabs-title .tabs-titleLink[data-v-9edb390e]:hover {\n        text-decoration: none;\n        color: #000;\n}\n.tabs-container .tabs-title .tabs-titleLink[data-v-9edb390e]:focus {\n        outline: none;\n}\n.tabs-container .tabs-title .tabs-titleLink.active[data-v-9edb390e] {\n        color: #000;\n        font-weight: 900;\n}\n.tabs-container .tabs-title .tabs-titleLink .cursor[data-v-9edb390e] {\n        content: '';\n        display: none;\n        position: absolute;\n        bottom: 0;\n        left: 50%;\n        transform: translateX(-50%);\n        width: 100%;\n        height: 0.10667rem;\n        background: #fdde02;\n}\n.tabs-container .tabs-title .tabs-titleLink.active .cursor[data-v-9edb390e] {\n        display: block;\n}\n", ""]);
 
 	// exports
 
@@ -10695,7 +10698,12 @@
 	          _vm.setPage(index)
 	        }
 	      }
-	    }, [_vm._v("\n                " + _vm._s(tab.tabHeader) + "\n            ")])])
+	    }, [_vm._v("\n                " + _vm._s(tab.tabHeader) + "\n                "), _c('i', {
+	      staticClass: "cursor",
+	      style: ({
+	        'background': tab.color ? tab.color : '#fdde02'
+	      })
+	    })])])
 	  })), _vm._v(" "), _c('div', {
 	    staticClass: "tabContent-wrap",
 	    on: {
@@ -10845,6 +10853,9 @@
 	        RedDot: {
 	            type: String,
 	            default: ''
+	        },
+	        color: {
+	            type: String
 	        }
 	    },
 	    data: function data() {
