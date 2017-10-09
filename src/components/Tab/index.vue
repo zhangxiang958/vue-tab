@@ -198,9 +198,9 @@
 <template>
     <div class="tabs-container">
         <ul class="tabs-list" role="tablist">
-            <li v-for="(tab,index) in tabs" 
+            <li v-for="(tab,index) in tabs"
                 :key="index"
-                class="tabs-title" 
+                class="tabs-title"
                 :style="{width: (100 / tabs.length) + '%', fontSize: tab.fontSize, height: tab.tabHeight}">
                 <a
                     :class="activeHash === tab.tabHash ? 'active' : ''"
@@ -261,6 +261,7 @@
         }
         .tabs-list {
             position: relative;
+            margin: 0;
             padding: 0;
             border-bottom: 1px solid #ccc;
             list-style: none;
