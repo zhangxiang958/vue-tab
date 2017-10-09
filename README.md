@@ -31,15 +31,15 @@ methods: {
 <template>
     <div class="app">
         <Tabs @changePage="changeFunc" indexTab="friend">
-            <Tab label="好友榜" hash="friend" fontsize="36" tabheight="90" color="red">
+            <TabPanel label="好友榜" hash="friend" fontsize="36" tabheight="90" color="red">
                 <div class="first"></div>
-            </Tab>
-            <Tab label="全省榜" hash="convince" fontsize="36" tabheight="90" color="red">
+            </TabPanel>
+            <TabPanel label="全省榜" hash="convince" fontsize="36" tabheight="90" color="red">
                 <div class="second"></div>
-            </Tab>
-            <Tab label="全国榜" hash="country" fontsize="36" tabheight="90" color="red">
+            </TabPanel>
+            <TabPanel label="全国榜" hash="country" fontsize="36" tabheight="90" color="red">
                 <div class="three"></div>
-            </Tab>
+            </TabPanel>
         </Tabs>
     </div>
 </template>
