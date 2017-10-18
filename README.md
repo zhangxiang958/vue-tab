@@ -13,20 +13,23 @@ npm install --save vue-swipe-tab@2.0.2
 ```
 
 ### Import using module
+use this code in app.js(entry js):
 ```
 import Tab from 'vue-swipe-tab';
 Vue.use(Tab);
 ```
-
 ## Usage
 
 ```
-
-methods: {
-    changePage(idx) {
-        console.log(idx);
+<script>
+    export default {
+        methods: {
+        changePage(idx) {
+            console.log(idx);
+        }
     }
 }
+</script>
 
 <template>
     <div class="app">
