@@ -44,15 +44,15 @@
     }
 
     .first {
-        height: 800px;
+        height: 5800px;
         background: yellow;
     }
     .second {
-        height: 500px;
+        height: 9500px;
         background: red;
     }
     .three {
-        height: 300px;
+        height: 800px;
         background: blue;
     }
 

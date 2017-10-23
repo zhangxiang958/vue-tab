@@ -9780,7 +9780,7 @@
 	  /* moduleIdentifier (server only) */
 	  null
 	)
-	Component.options.__file = "E:\\side project\\vue-tab\\src\\components\\app.vue"
+	Component.options.__file = "G:\\side project\\vue-tab\\src\\components\\app.vue"
 	if (Component.esModule && Object.keys(Component.esModule).some(function (key) {return key !== "default" && key.substr(0, 2) !== "__"})) {console.error("named exports are not supported in *.vue files.")}
 	if (Component.options.functional) {console.error("[vue-loader] app.vue: functional components are not supported with templates, they should use render functions.")}
 
@@ -9838,7 +9838,7 @@
 
 
 	// module
-	exports.push([module.id, "\n.first {\n  height: 800px;\n  background: yellow;\n}\n.second {\n  height: 500px;\n  background: red;\n}\n.three {\n  height: 300px;\n  background: blue;\n}\n.app-message {\n  padding-top: 0.8rem;\n  padding-bottom: 2.4rem;\n  text-align: center;\n  color: #888;\n  background: #f5f5f5;\n}\n[data-dpr=\"3\"] div.legoToast {\n  transform: scale(3) translate(-20%, -50%);\n}\n[data-dpr=\"2\"] div.legoToast {\n  transform: scale(2) translate(-25%, -50%);\n}\ndiv.shenquvideo-dimensions {\n  height: 100%;\n}\n", ""]);
+	exports.push([module.id, "\n.first {\n  height: 5800px;\n  background: yellow;\n}\n.second {\n  height: 9500px;\n  background: red;\n}\n.three {\n  height: 800px;\n  background: blue;\n}\n.app-message {\n  padding-top: 0.8rem;\n  padding-bottom: 2.4rem;\n  text-align: center;\n  color: #888;\n  background: #f5f5f5;\n}\n[data-dpr=\"3\"] div.legoToast {\n  transform: scale(3) translate(-20%, -50%);\n}\n[data-dpr=\"2\"] div.legoToast {\n  transform: scale(2) translate(-25%, -50%);\n}\ndiv.shenquvideo-dimensions {\n  height: 100%;\n}\n", ""]);
 
 	// exports
 
@@ -10391,7 +10391,7 @@
 	  /* moduleIdentifier (server only) */
 	  null
 	)
-	Component.options.__file = "E:\\side project\\vue-tab\\src\\components\\Tab\\index.vue"
+	Component.options.__file = "G:\\side project\\vue-tab\\src\\components\\Tab\\index.vue"
 	if (Component.esModule && Object.keys(Component.esModule).some(function (key) {return key !== "default" && key.substr(0, 2) !== "__"})) {console.error("named exports are not supported in *.vue files.")}
 	if (Component.options.functional) {console.error("[vue-loader] index.vue: functional components are not supported with templates, they should use render functions.")}
 
@@ -10449,7 +10449,7 @@
 
 
 	// module
-	exports.push([module.id, "\n.tabs-container[data-v-9edb390e] {\n  width: 100%;\n}\n.tabs-container .tabs-panel[data-v-9edb390e] {\n    width: 100%;\n    height: 100%;\n    font-size: 0;\n    white-space: nowrap;\n}\n.tabs-container .tabs-panel.transition[data-v-9edb390e] {\n      transition: all 0.2s ease;\n}\n.tabs-container .tabs-panel .tabs-panel-content[data-v-9edb390e] {\n      display: inline-block;\n      width: 100%;\n      font-size: 0.16rem;\n      vertical-align: top;\n}\n.tabs-container .tabContent-wrap[data-v-9edb390e] {\n    width: 100%;\n    overflow: hidden;\n}\n.tabs-container .tabs-list[data-v-9edb390e] {\n    position: relative;\n    padding: 0;\n    border-bottom: 1px solid #ccc;\n    list-style: none;\n    overflow: hidden;\n}\n.tabs-container .tabs-title[data-v-9edb390e] {\n    position: relative;\n    float: left;\n    width: 50%;\n    height: 1.2rem;\n    line-height: 1.2rem;\n    text-align: center;\n    font-size: 0.48rem;\n}\n.tabs-container .tabs-title[data-v-9edb390e]:after {\n      content: '';\n      display: block;\n      position: absolute;\n      top: 50%;\n      right: 0;\n      transform: translateY(-50%);\n      width: 0.04rem;\n      height: 0.48rem;\n      background: #e6e6e6;\n}\n.tabs-container .tabs-title[data-v-9edb390e]:last-child:after {\n      display: none;\n}\n.tabs-container .tabs-title .tabs-titleLink[data-v-9edb390e] {\n      display: block;\n      width: 100%;\n      height: 100%;\n      position: relative;\n      color: #999;\n}\n.tabs-container .tabs-title .tabs-titleLink[data-v-9edb390e]:hover {\n        text-decoration: none;\n        color: #000;\n}\n.tabs-container .tabs-title .tabs-titleLink[data-v-9edb390e]:focus {\n        outline: none;\n}\n.tabs-container .tabs-title .tabs-titleLink.active[data-v-9edb390e] {\n        color: #000;\n        font-weight: 900;\n}\n.tabs-container .tabs-title .tabs-titleLink .cursor[data-v-9edb390e] {\n        content: '';\n        display: none;\n        position: absolute;\n        bottom: 0;\n        left: 50%;\n        transform: translateX(-50%);\n        width: 100%;\n        height: 0.10667rem;\n        background: #fdde02;\n}\n.tabs-container .tabs-title .tabs-titleLink.active .cursor[data-v-9edb390e] {\n        display: block;\n}\n", ""]);
+	exports.push([module.id, "\n.tabs-container[data-v-9edb390e] {\n  width: 100%;\n}\n.tabs-container .tabs-panel[data-v-9edb390e] {\n    width: 100%;\n    height: 100%;\n    font-size: 0;\n    white-space: nowrap;\n}\n.tabs-container .tabs-panel.transition[data-v-9edb390e] {\n      transition: all 0.2s ease;\n}\n.tabs-container .tabs-panel .tabs-panel-content[data-v-9edb390e] {\n      display: inline-block;\n      width: 100%;\n      font-size: 0.16rem;\n      vertical-align: top;\n}\n.tabs-container .tabContent-wrap[data-v-9edb390e] {\n    width: 100%;\n    overflow: hidden;\n}\n.tabs-container .tabs-list[data-v-9edb390e] {\n    position: relative;\n    margin: 0;\n    padding: 0;\n    border-bottom: 1px solid #ccc;\n    list-style: none;\n    overflow: hidden;\n}\n.tabs-container .tabs-title[data-v-9edb390e] {\n    position: relative;\n    float: left;\n    width: 50%;\n    height: 1.2rem;\n    line-height: 1.2rem;\n    text-align: center;\n    font-size: 0.48rem;\n}\n.tabs-container .tabs-title[data-v-9edb390e]:after {\n      content: '';\n      display: block;\n      position: absolute;\n      top: 50%;\n      right: 0;\n      transform: translateY(-50%);\n      width: 0.04rem;\n      height: 0.48rem;\n      background: #e6e6e6;\n}\n.tabs-container .tabs-title[data-v-9edb390e]:last-child:after {\n      display: none;\n}\n.tabs-container .tabs-title .tabs-titleLink[data-v-9edb390e] {\n      display: block;\n      width: 100%;\n      height: 100%;\n      position: relative;\n      color: #999;\n}\n.tabs-container .tabs-title .tabs-titleLink[data-v-9edb390e]:hover {\n        text-decoration: none;\n        color: #000;\n}\n.tabs-container .tabs-title .tabs-titleLink[data-v-9edb390e]:focus {\n        outline: none;\n}\n.tabs-container .tabs-title .tabs-titleLink.active[data-v-9edb390e] {\n        color: #000;\n        font-weight: 900;\n}\n.tabs-container .tabs-title .tabs-titleLink .cursor[data-v-9edb390e] {\n        content: '';\n        display: none;\n        position: absolute;\n        bottom: 0;\n        left: 50%;\n        transform: translateX(-50%);\n        width: 100%;\n        height: 0.10667rem;\n        background: #fdde02;\n}\n.tabs-container .tabs-title .tabs-titleLink.active .cursor[data-v-9edb390e] {\n        display: block;\n}\n", ""]);
 
 	// exports
 
@@ -10627,14 +10627,15 @@
 	        onTouchEnd: function onTouchEnd(event) {
 	            var quick = new Date().getTime() - this.startTime < 1000;
 	            // console.log(quick);
-	            if (this.distance.left < -(100 * this.dpr) || quick && this.distance.left < -15 && this.distance.top / this.distance.left > -6) {
-	                // console.log('next');
+	            console.log(this.distance.top);
+	            if (this.distance.left < -(200 * this.dpr) && this.distance.top < 100 * this.dpr || quick && this.distance.left < -15 && this.distance.top / this.distance.left > -6) {
+	                console.log('next');
 	                // console.log(-(100 * this.dpr));
 	                this.next();
-	            } else if (this.distance.left > 100 * this.dpr || quick && this.distance.left > 15 && this.distance.top / this.distance.left < 6) {
+	            } else if (this.distance.left > 200 * this.dpr && this.distance.top < 100 * this.dpr || quick && this.distance.left > 15 && this.distance.top / this.distance.left < 6) {
 	                // console.log(this.distance.left);
 	                // console.log(100 * this.dpr);
-	                // console.log('prev');
+	                console.log('prev');
 	                this.prev();
 	            } else {
 	                this.reset();
@@ -10756,7 +10757,7 @@
 	  /* moduleIdentifier (server only) */
 	  null
 	)
-	Component.options.__file = "E:\\side project\\vue-tab\\src\\components\\Tab\\tab.vue"
+	Component.options.__file = "G:\\side project\\vue-tab\\src\\components\\Tab\\tab.vue"
 	if (Component.esModule && Object.keys(Component.esModule).some(function (key) {return key !== "default" && key.substr(0, 2) !== "__"})) {console.error("named exports are not supported in *.vue files.")}
 	if (Component.options.functional) {console.error("[vue-loader] tab.vue: functional components are not supported with templates, they should use render functions.")}
 
