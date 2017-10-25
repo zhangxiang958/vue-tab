@@ -14,6 +14,11 @@
                 edition: window.edition
             }
         },
+        methods: {
+            test(idx){
+                console.log(idx);
+            }
+        },
         components: {
             // Tabs, Tab
         }
@@ -22,7 +27,7 @@
 
 <template>
     <div class="app">
-        <Tabs indexTab="convince">
+        <Tabs indexTab="convince" @changePage="test">
             <TabPanel label="好友榜" hash="friend" fontsize="36" tabheight="90" color="red">
                 <div class="first"></div>
             </TabPanel>

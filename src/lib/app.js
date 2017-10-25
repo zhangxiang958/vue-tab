@@ -10298,6 +10298,11 @@
 	        };
 	    },
 
+	    methods: {
+	        test: function test(idx) {
+	            console.log(idx);
+	        }
+	    },
 	    components: {
 	        // Tabs, Tab
 	    }
@@ -10313,6 +10318,9 @@
 	  }, [_c('Tabs', {
 	    attrs: {
 	      "indexTab": "convince"
+	    },
+	    on: {
+	      "changePage": _vm.test
 	    }
 	  }, [_c('TabPanel', {
 	    attrs: {
@@ -10573,7 +10581,7 @@
 	                }
 	            });
 	            this.selectTab(this.tabs[page].tabHash);
-	            this.$emit('changePage', this.currentPage);
+	            this.currentPage !== prevPage && this.$emit('changePage', this.currentPage);
 	            setTimeout(function () {
 	                if (!_this2.transitionOrnot) {
 	                    _this2.transitionOrnot = true;
@@ -10627,7 +10635,7 @@
 	        onTouchEnd: function onTouchEnd(event) {
 	            var quick = new Date().getTime() - this.startTime < 1000;
 	            // console.log(quick);
-	            console.log(this.distance.top);
+	            // console.log(this.distance.top);
 	            if (this.distance.left < -(200 * this.dpr) && this.distance.top < 100 * this.dpr || quick && this.distance.left < -15 && this.distance.top / this.distance.left > -6) {
 	                console.log('next');
 	                // console.log(-(100 * this.dpr));
