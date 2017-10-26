@@ -13,21 +13,20 @@
         },
         mounted(){
 
-            if(this.tabs.length) {
-                // this.indexTab ? this.selectTab(this.indexTab) : this.selectTab(this.tabs[0].tabHash);
-                if(this.indexTab) {
-                    // this.selectTab(this.indexTab);
-                    this.tabs.forEach((item, idx) => {
-                        item.tabHash === this.indexTab && this.setPage(idx);
-                    });
-                } else {
-                    this.selectTab(this.tabs[0].tabHash);
-                    this.setPage(0);
-                }
-            }
             this.$nextTick(() => {
-
                 this.children = document.querySelectorAll('.tabs-panel-content');
+                if(this.tabs.length) {
+                    // this.indexTab ? this.selectTab(this.indexTab) : this.selectTab(this.tabs[0].tabHash);
+                    if(this.indexTab) {
+                        // this.selectTab(this.indexTab);
+                        this.tabs.forEach((item, idx) => {
+                            item.tabHash === this.indexTab && this.setPage(idx);
+                        });
+                    } else {
+                        this.selectTab(this.tabs[0].tabHash);
+                        this.setPage(0);
+                    }
+                }
             });
             this.initDPR();
         },
@@ -254,6 +253,8 @@
                 width: 100%;
                 font-size: rem(12);
                 vertical-align: top;
+                -webkit-overflow-scrolling: touch;
+                transform: translate3d(0,0,0);
             }
         }
         .tabContent-wrap {
