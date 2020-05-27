@@ -3,12 +3,6 @@
     // import { Tabs, Tab }  from './Tab';
 
     export default {
-        created(){
-
-        },
-        mounted(){
-
-        },
         data(){
             return {
                 edition: window.edition
@@ -76,8 +70,5 @@
     }
     div.shenquvideo-dimensions{
         height: 100%;
-    }
-    body{
-
     }
 </style>
